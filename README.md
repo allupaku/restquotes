@@ -13,3 +13,7 @@ Health Check
 ---
 
 To see your applications health enter url `http://localhost:8081/healthcheck`
+
+Also you can see the metrics at http://localhost:8081/metrics
+
+and look for QuoteSearch, under timers. This can be easily configured to be exported t graphite / other matrics visualization tool.

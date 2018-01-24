@@ -33,9 +33,9 @@ public class QuotesResource {
 
     @POST
     @Path("/search")
-    @ApiOperation(value = "/search", notes = "Search for quotes in the provided text",response = SearchResponse.class, consumes = "application/x-www-form-urlencoded")
     @Timed(name = "QuoteSearch")
-    @Metered(name = "QuoteSearch")
+    @Metered(name = "QuoteSearchMeter")
+    @ApiOperation(value = "/search", notes = "Search for quotes in the provided text",response = SearchResponse.class, consumes = "application/x-www-form-urlencoded")
     public Response searchQuote(
             @ApiParam(value = "Text which need to be searched", required = true, type = "string")
             @FormParam("searchText") String searchText
