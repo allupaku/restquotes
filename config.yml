@@ -15,3 +15,5 @@ bootstrapData:
 
 swagger:
   resourcePackage: "com.althaf.search.resources"
+  title: "Quote Search Application"
+  description: "Application to search a blob of text and find the quotes occuring in the text"
