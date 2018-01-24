@@ -1,0 +1,17 @@
+logging:
+  level: INFO
+#  type: external
+#  appenders:
+#      - type: file
+#        currentLogFilename: ./logs/searchlog.log
+#        archivedLogFilenamePattern: ./logs/searchlog-%d.log.gz
+#        archivedFileCount: 5
+#        timeZone: UTC
+  loggers:
+    com.althaf.search: DEBUG
+bootstrapData:
+  inputs:
+    - 'quotes.txt'
+
+swagger:
+  resourcePackage: "com.althaf.search.resources"
