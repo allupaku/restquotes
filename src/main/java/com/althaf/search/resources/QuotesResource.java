@@ -5,6 +5,8 @@ import com.althaf.search.api.SearchResponse;
 import com.althaf.search.core.TrieSearcher;
 import com.althaf.search.core.ds.Node;
 import com.althaf.search.core.ds.Trie;
+import com.codahale.metrics.annotation.Metered;
+import com.codahale.metrics.annotation.Timed;
 import com.google.common.base.CharMatcher;
 import com.google.common.base.Splitter;
 import io.swagger.annotations.Api;
@@ -32,6 +34,8 @@ public class QuotesResource {
     @POST
     @Path("/search")
     @ApiOperation(value = "/search", notes = "Search for quotes in the provided text",response = SearchResponse.class, consumes = "application/x-www-form-urlencoded")
+    @Timed(name = "QuoteSearch")
+    @Metered(name = "QuoteSearch")
     public Response searchQuote(
             @ApiParam(value = "Text which need to be searched", required = true, type = "string")
             @FormParam("searchText") String searchText
